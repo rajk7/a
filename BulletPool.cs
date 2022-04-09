@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using UnityEngine;
-namespace AssemblyCSharp.Assets.Scripts
-{
-	public class EmptyClass : MonoBehaviour
-	{
-                public GameObject _objectToPoolPrefab;
+    using System.Collections.Generic;
+    using UnityEngine;
+
+	   public class BulletPool : MonoBehaviour
+	   {
                 public GameObject _bulletPrefab;
                 public int _poolSize;
 
@@ -15,7 +13,7 @@ namespace AssemblyCSharp.Assets.Scripts
                     _bulletPool = new List<GameObject>();
                     for (int i = 0; i < _poolSize; i++)
                     {
-                        GameObject newBullet = Instantiate(_objectToPoolPrefab);
+                        GameObject newBullet = Instantiate(_bulletPrefab);
                         _bulletPool.Add(newBullet);
                         _bulletPool[i].SetActive(false);
                      }
@@ -36,9 +34,6 @@ namespace AssemblyCSharp.Assets.Scripts
                 {
                 go.SetActive(false);
                 _bulletPool.Add(go);
-
-
                 }
-        }
         
-}
+	  }
